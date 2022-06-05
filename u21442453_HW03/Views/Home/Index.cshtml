@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h1>File Uploader</h1>
+
+<h3>Please upload your files below.</h3>
+<blockquote>
+    <h4>Description:</h4>
+    <p>This is a file management system that runs on ASP.NET.</p>
+    <p>You will be able to upload your files here and view your uploaded files on pages on this website.</p>
+    <p>Please go ahead and upload any file below.</p>
+</blockquote>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <span class="control-fileupload">
+            @Html.TextBox("file", "", new { type = "file" }) <br />
+        </span>
+        <input type="submit" value="Upload" class="btn btn-default" />
+        <br />
+        <p class="@ViewBag.Style"><strong>@ViewBag.Message</strong></p>
+    </div>
+}
