@@ -2,17 +2,25 @@
     ViewBag.Title = "Home";
 }
 
-<h1 class="display-3">File Uploader</h1>
+<h1 class="display-4">File Uploader</h1>
 <hr />
-<h4>Please upload your files below.</h4>
+<h4>File Management System</h4>
 <blockquote class="blockquote">
     <h5>Description:</h5>
     <p>This is a file management system that runs on ASP.NET.</p>
     <p>You will be able to upload your files here and view your uploaded files on pages on this website.</p>
-    <p>Please go ahead and upload any file below.</p>
+    <p>The system wil sort and store your uploaded files into:
+        <ul>
+            <li>Documents</li>
+            <li>Images</li>
+            <li>Videos</li>
+        </ul>
+    </p>
+    <p>You are also able to download and delete your uploaded files. And view the Images and Videos on their pages.</p>
+    <p><strong>Please go ahead and upload any file below.</strong></p>
 </blockquote>
 <hr />
-@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data"}))
 {
     <div>
         <span class="control-fileupload">
