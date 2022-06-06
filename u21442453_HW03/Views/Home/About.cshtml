@@ -1,13 +1,13 @@
 ﻿@{
     ViewBag.Title = "About Me";
 }
-<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 d-flex">
-    <div class="container bg-3" style="display: flex">
+<div class="row row-col-sm-1d-flex">
+    <div style="display: flex">
         <div>
-            <img src="~/Media/Images/Bio.jpg" alt="Picture of me." class="img-thumbnail" />
+            <img src="~/Media/Images/Bio.jpg" alt="Picture of me." class="img-thumbnail" style="max-width: 20rem"/>
         </div>
-        <div class="jumbotron"1 style="background-color: #0047AB; color: white; max-width: 75%">
-            <div class="container text-center">
+        <div class="jumbotron" style="background-color: #0047AB; color: white;">
+            <div class="text-center">
                 <h1>@ViewBag.Title</h1>
                 <p>
                     Hi! My name is Gerhard. I am currently a student at the Univeristy of Pretoria.I am busy with my
@@ -22,22 +22,24 @@
 
 <div class="container-fluid bg-3 text-center" style="justify-content: center">
     <h2>Some of my Work</h2><br>
+    <div class="row">
 
-    <div class="col-sm-3" >
-        <h3 class="bg-info">Node.js</h3>
-        <img src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-        <h3 class="bg-info">Python</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-        <h3 class="bg-info">Discord Bots</h3>
-        <img src="https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-        <h3 class="bg-info">Postgres</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" class="img-responsive" style="width:100%" alt="Image">
+        <div class="col-sm-3">
+            <h3 class="bg-info">Node.js</h3>
+            <img src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <h3 class="bg-info">Python</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <h3 class="bg-info">Discord Bots</h3>
+            <img src="https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <h3 class="bg-info">Postgres</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" class="img-responsive" style="width:100%" alt="Image">
+        </div>
     </div>
 </div>
 <br>

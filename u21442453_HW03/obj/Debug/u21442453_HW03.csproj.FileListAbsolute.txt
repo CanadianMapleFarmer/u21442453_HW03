@@ -76,3 +76,6 @@ C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW
 C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\obj\Debug\u21442453_HW03.csproj.CopyComplete
 C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\obj\Debug\u21442453_HW03.dll
 C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\obj\Debug\u21442453_HW03.pdb
+C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\obj\Debug\u21442453_HW03.csproj.AssemblyReference.cache
+C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\bin\NReco.VideoConverter.dll
+C:\Users\Klopp\OneDrive\Tuks\2nd Year\SEMESTER 1\INF 272\Homework Assignments\HW03\u21442453_HW03\u21442453_HW03\bin\NReco.VideoConverter.xml

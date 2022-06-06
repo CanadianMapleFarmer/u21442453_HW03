@@ -1,39 +1,51 @@
 ﻿@model IEnumerable<u21442453_HW03.Models.FileModel>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h1>Documents</h1>
+<hr />
+<h4>~/Media/Documents</h4>
+<div class="table-responsive">
 <table class="table">
-    <tr>
+    <tr style="font-size: 18px; background-color: black; color:white">
         <th>
-            @Html.DisplayNameFor(model => model.FileName)
+            File Name:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FileType)
+            File Type:
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilePath)
+        <th style="display: flex;margin-left: 30%">
+            Action:
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FileName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FileType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilePath)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileType)
+            </td>
+            <td style="display: flex; margin-left: 30%;">
+                @using (Html.BeginForm("Download", "File", FormMethod.Post))
+                {
+                    @Html.Hidden("dPath", item.FilePath);
+                    <input type="hidden" name="path" value="@item.FilePath">
+                    <button type="submit" class="btn btn-success">
+                        <span class="fa-solid fa-circle-down"></span>Download
+                    </button>
+                }
+                @using (Html.BeginForm("Delete", "File", FormMethod.Post))
+                {
+                    @Html.Hidden("path", item.FilePath);
+                    <input type="hidden" name="path" value="@item.FilePath">
+                    <button type="submit" name="submit" class="btn btn-danger" style="margin-left: 5px">
+                        <span class="fa-solid fa-trash"></span> Delete
+                    </button>
+                }
+            </td>
+        </tr>
+    }
 
 </table>
+</div>
