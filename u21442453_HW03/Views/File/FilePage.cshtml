@@ -1,55 +1,62 @@
 ﻿@model IEnumerable<u21442453_HW03.Models.FileModel>
 
-@{ 
+@{
     ViewBag.Title = "Documents";
 }
 
+<!--Title & Subtitle-->
 <h1>Documents</h1>
 <hr />
 <h4>~/Media/Documents</h4>
+<!--A responsive table used to display the documents on all types of screens.-->
 <div class="table-responsive">
-<table class="table">
-    <tr style="font-size: 18px; background-color: black; color:white">
-        <th>
-            File Name:
-        </th>
-        <th>
-            File Type:
-        </th>
-        <th style="display: flex;margin-left: 30%">
-            Action:
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FileName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FileType)
-            </td>
-            <td style="display: flex; margin-left: 30%;">
-                @using (Html.BeginForm("Download", "File", FormMethod.Post))
-                {
-                    @Html.Hidden("dPath", item.FilePath);
-                    <input type="hidden" name="path" value="@item.FilePath">
-                    <button type="submit" class="btn btn-success">
-                        <span class="fa-solid fa-circle-down"></span>Download
-                    </button>
-                }
-                @using (Html.BeginForm("Delete", "File", FormMethod.Post))
-                {
-                    @Html.Hidden("path", item.FilePath);
-                    <input type="hidden" name="path" value="@item.FilePath">
-                    <button type="submit" name="submit" class="btn btn-danger" style="margin-left: 5px">
-                        <span class="fa-solid fa-trash"></span> Delete
-                    </button>
-                }
-            </td>
+    <table class="table">
+        <!--Table Headers-->
+        <tr style="font-size: 18px; background-color: black; color:white">
+            <th>
+                File Name:
+            </th>
+            <th>
+                File Type:
+            </th>
+            <th style="display: flex;margin-left: auto">
+                Action:
+            </th>
         </tr>
-    }
+        <!--Dynamically loaded data from fileArr passed to View().-->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <!--FileName and FileType displayed in table.-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileType)
+                </td>
+                <!--Action buttons loaded for download and delete actions.-->
+                <td style="display: flex; margin-left: auto;">
+                    @using (Html.BeginForm("Download", "File", FormMethod.Post))
+                    {
+                        <!--Download action with dPath variable passed to controller-->
+                        @Html.Hidden("dPath", item.FilePath);
+                        <input type="hidden" name="path" value="@item.FilePath">
+                        <button type="submit" class="btn btn-success">
+                            <span class="fa-solid fa-circle-down"></span>Download
+                        </button>
+                    }
+                    @using (Html.BeginForm("Delete", "File", FormMethod.Post))
+                    {
+                        <!--Delete action with path variable passed to controller-->
+                        @Html.Hidden("path", item.FilePath);
+                        <input type="hidden" name="path" value="@item.FilePath">
+                        <button type="submit" name="submit" class="btn btn-danger" style="margin-left: 5px">
+                            <span class="fa-solid fa-trash"></span> Delete
+                        </button>
+                    }
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
 </div>

@@ -2,6 +2,7 @@
     ViewBag.Title = "Home";
 }
 
+<!--Title, Subtitle & Description-->
 <h1 class="display-4">File Uploader</h1>
 <hr />
 <h4>File Management System</h4>
@@ -20,6 +21,9 @@
     <p><strong>Please go ahead and upload any file below.</strong></p>
 </blockquote>
 <hr />
+<!--Form for file submission.-->
+<!--Notice no Radio Butons, I thought it was pointless for user to decide the file type.
+    Please refer to HomeController to see how the files are handled.-->
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data"}))
 {
     <div>

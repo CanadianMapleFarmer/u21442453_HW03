@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 20px;
 }
 
@@ -26,4 +26,17 @@ textarea {
 /*Setting paragraph formatting*/
 p {
     white-space: pre-line
+}
+
+#about-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about-row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }

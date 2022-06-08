@@ -10,6 +10,7 @@ namespace u21442453_HW03.Controllers
     public class HomeController : Controller
     {
 
+        [HttpGet]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -26,14 +27,20 @@ namespace u21442453_HW03.Controllers
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase file)
         {
+            //File handler & retrieval
             try
             {
+                //File type variable.
                 string fType = "";
                 if (file != null)
                 {
+                    //Get file path from file paramater.
                     string fileName = Path.GetFileName(file.FileName);
                     string filePath = "";
+                    //Filter the path to MIME and get the MIME file type.
                     string filter = file.ContentType.Split('/').Last();
+                    //Switch case used to automatically save the correct file type in
+                    //it's corresponding folder in "./Media"
                     switch (filter)
                     {
                         case "jpg":
@@ -115,13 +122,15 @@ namespace u21442453_HW03.Controllers
                     }
                     file.SaveAs(filePath);
                 }
+                //Return a Message that contains the file type saved. Shown after upload is complete.
                 ViewBag.Message = $"You successfully uploaded a(n): {fType}";
                 ViewBag.Style = "bg-success";
                 return View();
             }
             catch
             {
-                ViewBag.Message = "File uploaded failed!";
+                //Error handling, also return message to View();
+                ViewBag.Message = "File upload failed!";
                 ViewBag.Style = "bg-danger";
                 return View();
             }

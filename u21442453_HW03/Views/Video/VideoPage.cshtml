@@ -1,30 +1,37 @@
 ﻿@model IEnumerable<u21442453_HW03.Models.FileModel>
 
-@{ 
+@{
     ViewBag.Title = "Videos";
 }
+<!--Title & Subtitle-->
 <h1>Videos</h1>
 <hr />
 <h4>~/Media/Videos</h4>
-
+<!--Container created to display all the Videos.-->
 <div class="container">
-    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 d-flex">
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 d-flex">
+        <!--Cards dynalically created to display each video as a card.-->
         @foreach (var file in Model)
         {
+            <!--Thumbnail file name string created from fileName-->
             string tN = file.FileName.Split('.').First() + ".jpg";
             <div class="col-xs-1" style="padding: 10px">
                 <div class="card h-100" style="margin-top: 10px;">
+                    <!--Header contains the file name.-->
                     <div class="card-header">
                         <strong>@file.FileName</strong>
                     </div>
+                    <!--Body contains the Video FancyBox and the Generated Thumbnail for each video.-->
                     <div class="card-body d-flex flex-column">
                         <a href="~/Media/Videos/@file.FileName" data-fancybox data-caption="Image of: @file.FileName">
                             <img class="card-img" src="~/Media/Images/Thumbnails/@tN" alt="Image of: @Url.Content(file.FilePath)" />
                         </a>
                     </div>
+                    <!--Footer contains the Action Buttons-->
                     <div class="card-footer d-flex">
                         @using (Html.BeginForm("Download", "Video", FormMethod.Post))
                         {
+                            <!--Download action with dPath variable passed to controller-->
                             @Html.Hidden("dPath", file.FilePath);
                             <input type="hidden" name="path" value="@file.FilePath">
                             <button type="submit" class="btn btn-success">
@@ -33,6 +40,7 @@
                         }
                         @using (Html.BeginForm("Delete", "Video", FormMethod.Post))
                         {
+                            <!--Delete action with path variable passed to controller-->
                             @Html.Hidden("path", file.FilePath);
                             <input type="hidden" name="path" value="@file.FilePath">
                             <button type="submit" name="submit" class="btn btn-danger" style="margin-left: 5px">

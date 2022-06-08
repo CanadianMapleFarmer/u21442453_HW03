@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - INF 272 HW03</title>
+    <!--CSS & Icons CDN imports-->
     <script src="https://kit.fontawesome.com/26222a6b70.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
@@ -13,17 +14,18 @@
           crossorigin="anonymous" 
           referrerpolicy="no-referrer" />
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
 </head>
 <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <div class="container-fluid">
-            @Html.ActionLink("INF 272 HW03", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Files", "FilePage", "File", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Images", "ImagePage", "Image", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Videos", "VideoPage", "Video", new { area = "" }, new { @class = "nav-link" })</li>
@@ -33,6 +35,7 @@
         </div>
     </nav>
 
+    <!--Body for views-->
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -41,6 +44,7 @@
         </footer>
     </div>
 
+    <!--JS CDN imports-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
