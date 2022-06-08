@@ -111,10 +111,6 @@ namespace u21442453_HW03.Controllers
                             filePath = Path.Combine(Server.MapPath("~/Media/Videos"), fileName);
                             fType = "Video";
                             break;
-                        case "":
-                            filePath = Path.Combine(Server.MapPath("~/Media/Videos"), fileName);
-                            fType = "Video";
-                            break;
                         default:
                             filePath = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
                             fType = "Document";
